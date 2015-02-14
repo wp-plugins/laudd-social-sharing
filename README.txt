@@ -3,22 +3,26 @@ Contributors: laudd
 Tags: social network sharing, social sharing toolbar, premium content
 Requires at least: 3.0.1
 Tested up to: 4.3
-Stable tag: 4.3
+Stable tag: 4.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Users earn points when content they share through the Laudd toolbar generates traffic. Also enables premium content that can be viewed using points.
 
 == Description ==
-What is Laudd:
-	Laudd dramatically increase social buzz and traffic. With this plugin you get to:
-	1.	Encourage Sharing: The Laudd sharing toolbar automatically appears on all posts, and users are encouraged to share more as they earn points when the posts they share generate traffic back to your website.
-	2.	Reward Influencers: Mark certain items within any of your pages as "premium". Users can use points they earn by generating traffic to your website, to view premium content on any participating website.
-	3.	Gain Insights: Detailed and accurate metrics of sharing and visits through all supported social networks based on customizable time range.
+
+Laudd dramatically increase social buzz and traffic. With this plugin you get to:
+* Encourage Sharing: The Laudd sharing toolbar automatically appears on all posts, and users are encouraged to share more as they earn points when the posts they share generate traffic back to your website.
+* Reward Influencers: Automatically or manually mark portions any of your pages as "premium". Users can use points they earn by generating traffic to your website to view premium content on any participating website.
+* Gain Insights: Detailed and accurate metrics of sharing and visits through all supported social networks based on customizable time range.
 	
-How It Works
-	After you install and activate the plugin and register a new website, all your posts automatically display the Laudd sharing toolbar. The toolbar is responsive, in that it automatically adjusts its user interface depending on whether the user is visiting your website from a PC, tablet or smartphone.
-	Users get 10 points on sign up, and earn two points for every visit they generate through content they have shared using this toolbar. If a user runs out of points, he or she can conveniently review previously read articles and share it from within the page he or she is viewing.
+= How It Works =
+
+* After you install and activate the plugin and register a new website, all your posts automatically display the Laudd sharing toolbar. 
+* The toolbar is responsive, in that it automatically adjusts its user interface depending on whether the user is visiting your website from a PC, tablet or smartphone.
+* Users get 10 points on sign up, and earn two points for every visit they generate through content they have shared using this toolbar. 
+* If a user runs out of points, he or she can conveniently review previously read articles and share it from within the page he or she is viewing.
+* You can automatically or manually mark premium content in any post. Points earned can be used to view premium content. 
 	
 == Installation ==
 	Please see note on Permalink Style at the bottom of this section before using the Laudd plugin.
@@ -44,7 +48,10 @@ How It Works
 		6.  Paste the "Site Id" into the "Site Id" field in the activation page and click "Submit". Your plugin is now active!
 		
 	Permalink Style
-		Please note that for the Laudd plugin to work correctly, the "Permalink" style has to be one in which the path section of the URL is unique for each page. Specifically, the old default permalink style of a fixed path followed by a unique per-page parameter ("?p=123") does not work. Please change the permalink style before using the Laudd plugin. You may change the permalink style after plugin installation.
+		Please note that for the Laudd plugin to work correctly, the "Permalink" style has to be one in which the path section 
+		of the URL is unique for each page. Specifically, the old default permalink style of a fixed path followed by a unique 
+		per-page parameter ("?p=123") does not work. Please change the permalink style before using the Laudd plugin. You may 
+		change the permalink style after plugin installation.
 	
 == Frequently Asked Questions ==
 = Why should I use the Laudd Plugin? =
