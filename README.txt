@@ -3,7 +3,7 @@ Contributors: laudd
 Tags: social network sharing, social sharing toolbar, premium content
 Requires at least: 3.0.1
 Tested up to: 4.3
-Stable tag: 4.3
+Stable tag: 4.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ Laudd dramatically increase social buzz and traffic. With this plugin you get to
 * The toolbar is responsive, in that it automatically adjusts its user interface depending on whether the user is visiting your website from a PC, tablet or smartphone.
 * Users get 10 points on sign up, and earn two points for every visit they generate through content they have shared using this toolbar. 
 * If a user runs out of points, he or she can conveniently review previously read articles and share it from within the page he or she is viewing.
-* You can automatically or manually mark premium content in any post. Points earned through Laudd can be used to view premium content. 
+* You can automatically or manually mark premium content in any post. Points earned can be used to view premium content. 
 	
 == Installation ==
 	Please see note on Permalink Style at the bottom of this section before using the Laudd plugin.
