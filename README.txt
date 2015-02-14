@@ -13,9 +13,9 @@ Users earn points when content they share through the Laudd toolbar generates tr
 
 Laudd dramatically increase social buzz and traffic. With this plugin you get to:
 
-* Encourage Sharing: The Laudd sharing toolbar automatically appears on all posts, and users are encouraged to share more as they earn points when the posts they share generate traffic back to your website.
-* Reward Influencers: Automatically or manually mark portions any of your pages as "premium". Users can use points they earn by generating traffic to your website to view premium content on any participating website.
-* Gain Insights: Detailed and accurate metrics of sharing and visits through all supported social networks based on customizable time range.
+* '''Encourage Sharing''': The Laudd sharing toolbar automatically appears on all posts, and users are encouraged to share more as they earn points when the posts they share generate traffic back to your website.
+* '''Reward Influencers''': Automatically or manually mark portions any of your pages as "premium". Users can use points they earn by generating traffic to your website to view premium content on any participating website.
+* '''Gain Insights''': Detailed and accurate metrics of sharing and visits through all supported social networks based on customizable time range.
 	
 = How It Works =
 
