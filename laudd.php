@@ -43,7 +43,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			
 		// Add WP Ajax action for Site ID Check
 			add_action('wp_ajax_check_laudd_site_id_status', array($this, 'check_laudd_site_id_status'));
-		
+			
+		// Deactivate Laudd For Blank Site Id
+			add_action('admin_head', array($this, 'deactivate_laudd_for_blank_site_id'));
 		// Adding a setting link Under Plugin Name
 			$plugin = plugin_basename(__FILE__); 
 	
@@ -91,6 +93,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	   function deactivate_plugin()
 	   { 
 			$this->processOption('laudd_siteid');
+			$this->processOption('laudd_activated');
 	   }
 	
    
@@ -148,7 +151,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	   }	   
 	   function srpt_plugin_redirect() 
 		{
-			if(strlen(get_option( 'srpt_activation_redirect' ) ) > 0 && !strlen( get_option('laudd_siteid') ) > 0 ){
+			if( strlen( get_option( 'srpt_activation_redirect' ) ) > 0 && strlen( get_option( 'laudd_activated' ) ) > 0 && !strlen( get_option('laudd_siteid') ) > 0 ){
 			
 					$srpt_url = admin_url( 'tools.php?page=Register-Laudd', 'http' );
 					if (get_option('srpt_activation_redirect', false))
@@ -387,6 +390,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	function check_laudd_site_id_status()
 	{
 		$invalid_data = 'ew!';
+		$deactivation_flag = true;
 		if( isset( $_POST['site_id'] ) && $_POST['site_id']){
 			$siteID = $_POST['site_id'];
 			$input_data = 's='.$siteID.'&canURL=http://laudd.com';				
@@ -399,17 +403,35 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
 			curl_close($ch); 
 			if( $data  == $invalid_data || $data  == '' ){
+				$deactivation_flag = true;
 				echo $invalid_data;
 			} else {
 				update_option( 'laudd_siteid', $siteID, 'yes' );
+				$deactivation_flag = false;
 				echo 1;
 			}
 		} else {
+			$deactivation_flag = true;
 			echo $invalid_data;
+		}
+		if( $deactivation_flag ){
+			deactivate_plugins( plugin_basename( __FILE__ ) );
 		}
 		die();
 	}
-	//---------------------------------------------------------------------------------------------//	   
+	//---------------------------------------------------------------------------------------------//
+	  //Check if Site ID is entered or not
+	  function deactivate_laudd_for_blank_site_id()
+	  {
+		 $screen = get_current_screen();
+		 $current_page_base = $screen->base;
+		 $res = array('tools_page_Register-Laudd', 'plugins');
+		 if( $current_page_base != '' ){
+			 if( !in_array($current_page_base, $res ) && !strlen(get_option('laudd_siteid')) > 0  ){
+				deactivate_plugins( plugin_basename( __FILE__ ) );
+			 }
+		 }
+	  }	   
 }
 $laudd = new Laudd();
 ?>

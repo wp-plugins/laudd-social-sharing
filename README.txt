@@ -1,20 +1,24 @@
-=== Laudd Share to Earn Points ===
+=== Laudd Social Share to Earn Points ===
 Contributors: laudd
-Tags: social network sharing, social sharing toolbar, premium content
+Tags: social network sharing, social sharing toolbar, premium content, free, mobile, responsive, facebook, twitter, linkedin, wordpress paywall
 Requires at least: 3.0.1
 Tested up to: 4.3
-Stable tag: 4.3.2
+Stable tag: 4.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Users earn points when content they share through the Laudd toolbar generates traffic. Also enables premium content that can be viewed using points.
+Free plugin and service. Toolbar awards users points when posts they share generate traffic. Enables premium content that can be viewed using points.
 
 == Description ==
 
-Laudd dramatically increase social buzz and traffic. With this plugin you get to:
-* Encourage Sharing: The Laudd sharing toolbar automatically appears on all posts, and users are encouraged to share more as they earn points when the posts they share generate traffic back to your website.
-* Reward Influencers: Automatically or manually mark portions any of your pages as "premium". Users can use points they earn by generating traffic to your website to view premium content on any participating website.
-* Gain Insights: Detailed and accurate metrics of sharing and visits through all supported social networks based on customizable time range.
+Laudd dramatically increases social buzz and traffic. Unlike a paywall that blocks entire pages, Laudd enables you to mark premium content within each page.
+
+With this plugin you get to:
+
+* __Encourage Sharing__: The Laudd sharing toolbar automatically appears on all posts, and users are encouraged to share more as they earn points when the posts they share generate traffic back to your website.
+* __Reward Influencers__: Automatically or manually mark portions any of your pages as "premium". Users can use points they earn by generating traffic to your website to view premium content on any participating website.
+* __Increase Subscriptions__ : If your blog or website has a subscription option, it shows on every page overlaid on premium content.
+* __Gain Insights__: Detailed and accurate metrics of sharing and visits through all supported social networks based on customizable time range.
 	
 = How It Works =
 
@@ -81,6 +85,12 @@ Yes. While the current supported social networks cover the vast majority of the 
 3. Laudd vertical toolbar for a known user
 
 == Changelog ==
+= 4.3.4 =
+* Updated description in README
+
+= 4.3.3 =
+* Plugin now activates only if there is a valid site Id.
+
 = 4.3.2 =
 * Added missing files
 
