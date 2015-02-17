@@ -81,6 +81,9 @@ Yes. While the current supported social networks cover the vast majority of the 
 3. Laudd vertical toolbar for a known user
 
 == Changelog ==
+= 4.3.3 =
+* Plugin now activates only if there is a valid site Id.
+
 = 4.3.2 =
 * Added missing files
 
