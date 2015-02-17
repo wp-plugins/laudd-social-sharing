@@ -75,6 +75,7 @@
 						     <form name="laudd-register" method="post" action="" onsubmit="return validate();">
 									<input type="text" placeholder="Copy and paste the Site Id here" name="site_id" id="laudd_site_id">
 									<input type="hidden" name="redirect-page" id="thanks-redirect-page" value="<?php echo admin_url("tools.php?page=Laudd-Thankyou") ?>" />
+									<input type="hidden" name="redirect-cancel-url" id="redirect-cancel-url" value="<?php echo admin_url("plugins.php") ?>" />
 									<input type="submit" value="Submit"  name="submit_site_id" id="submit_site_id" />
 							 </form>
 						   </div> 
