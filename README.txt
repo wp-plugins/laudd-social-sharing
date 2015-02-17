@@ -1,6 +1,6 @@
 === Laudd Social Share to Earn Points ===
 Contributors: laudd
-Tags: social network sharing, social sharing toolbar, premium content, free, mobile, responsive, facebook, twitter, linkedin
+Tags: social network sharing, social sharing toolbar, premium content, free, mobile, responsive, facebook, twitter, linkedin, wordpress paywall
 Requires at least: 3.0.1
 Tested up to: 4.3
 Stable tag: 4.3.3
@@ -11,10 +11,13 @@ Free plugin and service. Toolbar awards users points when posts they share gener
 
 == Description ==
 
-Laudd dramatically increases social buzz and traffic. With this plugin you get to:
+Laudd dramatically increases social buzz and traffic. Unlike a paywall that blocks entire pages, Laudd enables you to mark premium content within each page.
+
+With this plugin you get to:
 
 * __Encourage Sharing__: The Laudd sharing toolbar automatically appears on all posts, and users are encouraged to share more as they earn points when the posts they share generate traffic back to your website.
 * __Reward Influencers__: Automatically or manually mark portions any of your pages as "premium". Users can use points they earn by generating traffic to your website to view premium content on any participating website.
+* __Increase Subscriptions__ : If your blog or website has a subscription option, it shows on every page overlaid on premium content.
 * __Gain Insights__: Detailed and accurate metrics of sharing and visits through all supported social networks based on customizable time range.
 	
 = How It Works =
