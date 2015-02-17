@@ -3,7 +3,7 @@ Contributors: laudd
 Tags: social network sharing, social sharing toolbar, premium content, free, mobile, responsive, facebook, twitter, linkedin, wordpress paywall
 Requires at least: 3.0.1
 Tested up to: 4.3
-Stable tag: 4.3.3
+Stable tag: 4.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,9 @@ Yes. While the current supported social networks cover the vast majority of the 
 3. Laudd vertical toolbar for a known user
 
 == Changelog ==
+= 4.3.4 =
+* Updated description in README
+
 = 4.3.3 =
 * Plugin now activates only if there is a valid site Id.
 
