@@ -1,13 +1,13 @@
-=== Laudd Share to Earn Points ===
+=== Laudd Social Share to Earn Points ===
 Contributors: laudd
-Tags: social network sharing, social sharing toolbar, premium content, free, mobile, responsive
+Tags: social network sharing, social sharing toolbar, premium content, free, mobile, responsive, facebook, twitter, linkedin
 Requires at least: 3.0.1
 Tested up to: 4.3
 Stable tag: 4.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Free plugin and service. Users earn points when content they share through the Laudd toolbar generates traffic. Also enables premium content that can be viewed using points.
+Free plugin and service. Toolbar awards users points when posts they share generates traffic. Enables premium content that can be viewed using points.
 
 == Description ==
 
