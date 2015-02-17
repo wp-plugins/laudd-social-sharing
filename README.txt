@@ -7,7 +7,7 @@ Stable tag: 4.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Free plugin and service. Toolbar awards users points when posts they share generates traffic. Enables premium content that can be viewed using points.
+Free plugin and service. Toolbar awards users points when posts they share generate traffic. Enables premium content that can be viewed using points.
 
 == Description ==
 
