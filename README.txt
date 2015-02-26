@@ -7,11 +7,11 @@ Stable tag: 4.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Free plugin and service. Toolbar awards users points when posts they share generate traffic. Enables premium content that can be viewed using points.
+Increase social traffic to your blog by giving points when shared content generates traffic. Display premium content that is accessed using points.
 
 == Description ==
 
-Laudd dramatically increases social buzz and traffic. Unlike a paywall that blocks entire pages, Laudd enables you to mark premium content within each page.
+Free plugin enables offers users points content shared through this toolbar generates traffic back to your blog or news website. Enables you to mark premium content that can be viewed using the earned points.
 
 With this plugin you get to:
 
