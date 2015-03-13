@@ -3,7 +3,7 @@ Contributors: laudd
 Tags: social network sharing, social sharing toolbar, premium content, free, mobile, responsive, facebook, twitter, linkedin, wordpress paywall
 Requires at least: 3.0.1
 Tested up to: 4.3
-Stable tag: 4.3.4
+Stable tag: 4.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ Increase social traffic to your blog by giving points when shared content genera
 
 == Description ==
 
-Free plugin enables offers users points content shared through this toolbar generates traffic back to your blog or news website. Enables you to mark premium content that can be viewed using the earned points.
+Free plugin offers users points content shared through this toolbar generates traffic back to your blog or news website. Enables you to mark premium content that can be viewed using the earned points.
 
 With this plugin you get to:
 
@@ -85,6 +85,9 @@ Yes. While the current supported social networks cover the vast majority of the 
 3. Laudd vertical toolbar for a known user
 
 == Changelog ==
+= 4.3.5 =
+* Switched to a different scheme for validating Site Id. More robust.
+
 = 4.3.4 =
 * Updated description in README
 

@@ -2,10 +2,10 @@
 /**
  * Plugin Name: laudd
  * Plugin URI: https://laudd.com/plugin
- * Description: Laudd is a digital media monetization solution that is introducing a free, unique and responsive toolbar that includes the ability to share content on social networks.
- * Version: laudd 1.0
+ * Description: Free plugin offers users points content shared through this toolbar generates traffic back to your blog or news website. Enables you to mark premium content that can be viewed using the earned points.
+ * Version: Laudd 4.3.5
  * Author: Laudd, Inc
- * Author URI: https://laudd.com/plugin
+ * Author URI: https://laudd.com
  * Tags: Laudd, laudd.com
  * License: GPL
 This program is free software: you can redistribute it and/or modify
@@ -388,28 +388,27 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
    //---------------------------------------------------------------------------------------------//	   
 	//Check if Site ID is correct or not
 	function check_laudd_site_id_status()
-	{
+	{	
 		$invalid_data = 'ew!';
 		$deactivation_flag = true;
 		if( isset( $_POST['site_id'] ) && $_POST['site_id']){
 			$siteID = $_POST['site_id'];
-			$input_data = 's='.$siteID.'&canURL=http://laudd.com';				
-			$url = "https://laudd.com/userv/ReIgnite?s=".$siteID."&canURL=http://laudd.com";
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 300);
-			$data = curl_exec($ch);
-			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
-			curl_close($ch); 
-			if( $data  == $invalid_data || $data  == '' ){
+			$url = "https://laudd.com/PublisherPortal/verifySiteId?s=".$siteID;
+			$json = @file_get_contents($url);
+			$data = json_decode($json);
+			if(is_object($data)){
+				if( $data->error == '' ){
+					update_option( 'laudd_siteid', $siteID, 'yes' );
+					$deactivation_flag = false;
+					echo 1;
+				} else {
+					$deactivation_flag = true;
+					echo $invalid_data;
+				}
+			} else {
 				$deactivation_flag = true;
 				echo $invalid_data;
-			} else {
-				update_option( 'laudd_siteid', $siteID, 'yes' );
-				$deactivation_flag = false;
-				echo 1;
-			}
+			}	
 		} else {
 			$deactivation_flag = true;
 			echo $invalid_data;
