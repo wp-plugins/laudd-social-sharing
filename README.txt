@@ -11,7 +11,7 @@ Increase social traffic to your blog by giving points when shared content genera
 
 == Description ==
 
-Free plugin offers users points content shared through this toolbar generates traffic back to your blog or news website. Enables you to mark premium content that can be viewed using the earned points.
+Free plugin offers users points when content shared through this toolbar generates traffic back to your blog or news website. Enables you to mark premium content that can be viewed using the earned points.
 
 With this plugin you get to:
 
