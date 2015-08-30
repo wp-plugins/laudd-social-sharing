@@ -117,6 +117,7 @@ jQuery(window).load(function() {
 			jQuery('#dialog-pc-caption textarea').val('');
 			//jQuery('#dialog-pc-caption').hide();
 			jQuery('#pop-laudd-main').hide();	
+			return false;
 		});
 		
 	/* -------- Mark Premiun Content Cancel Button Click Function ------------ */
