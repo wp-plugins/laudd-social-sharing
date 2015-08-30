@@ -54,16 +54,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		   //Activating  Sessions
 			add_action('init', array($this, 'metrics_session'));		
 		   
-		   //Calling Function Add Custom Buttons to Editor
-				add_action( 'admin_print_footer_scripts', array($this,'appthemes_add_quicktags') );
-			
 			//Calling Function to Run Code in Single.PHP file
 				add_filter('the_content', array( $this,'laudd_add_to_content')) ;
 			
+				
+			/*
+		   //Calling Function Add Custom Buttons to Editor
+				add_action( 'admin_print_footer_scripts', array($this,'appthemes_add_quicktags') );
+
 			//Calling Function add tool bar option for single post 
 				add_action( 'add_meta_boxes', array($this, 'my_custom_field_checkboxes' ));
 				add_action( 'save_post', array($this,'my_custom_field_data' ));
-				
+			
 			//Calling Function to create Short Code for Laudd Toolbar	
 				add_shortcode( 'LauddToolbar', array($this, 'laudd_toolbar') );
 				add_shortcode('LauddObscure', array($this, 'laudd_obscure'));
@@ -72,7 +74,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			//Add Button on side of Media Button
 				add_action('media_buttons', array($this, 'add_mark_premium_Content_btn'), 20);
 				add_action('wp_enqueue_media', array($this, 'include_laudd_button_js_file'), 21);
-			
+			*/
+
 			//Code For Deactivation 
 				register_deactivation_hook( __FILE__, array($this, 'deactivate_plugin' ));
 				
@@ -221,35 +224,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		public function register_plugin_scripts()
 		{
 			
-			if(is_single() || is_admin()){
+			if(!is_home()){
 				$site_id = get_option('laudd_siteid');
 				echo "<script>(function(){
 								var ld = document.createElement('script');ld.type = 'text/javascript'; ld.async = true;
 								ld.src = 'https://laudd.com/userv/ReIgnite?s=".$site_id."';var s = document.getElementsByTagName('script')[0];
 								s.parentNode.insertBefore(ld, s);
 						})();</script>";
-				}
 			}
+		}
 		
   //--------------------------------------------------------------------------------------------------------------------------------------// 
 	//Code to Run Code in Single.PHP file
 		function laudd_add_to_content($content)
 		{	
-			global $post;
-			$post_id = $post->ID;
-			$tool_values = get_post_meta( $post_id, 'load_toolbar', true );
-			$updated_content="";
-			if( is_single() && ($tool_values == 1 || $tool_values == '')) 
-			{
-				$updated_content .= '<div class="laudd-toolbar" data-aspect="horizontal" data-button-color="white" data-spring-loaded="false" ></div>';
-				$updated_content .= '<div class="laudd-toolbar" data-aspect="vertical" data-button-color="white" data-spring-loaded="false" ></div>';
-			}
-			
-			$auto_mark_content_value = get_post_meta( $post_id, 'auto_mark_content', true ); 
-			if(is_single() && ($auto_mark_content_value == 1)){
-				  $auto_mark_content = '<div class="Laudd_show" style="visibility:hidden;">&nbsp;</div>';
-			}
-			
+			$updated_content .= '<div class="laudd-toolbar" data-aspect="horizontal"></div>';
+			$updated_content .= '<div class="laudd-toolbar" data-aspect="vertical"></div>';
 			return @$updated_content.$content.@$auto_mark_content;
 		}
 	 

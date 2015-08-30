@@ -30,20 +30,7 @@
                                     	Motivate users to share your content
                                     </div>
                                     <div class="icon-txt">
-                                    	Only the Laudd sharing toolbar offers your users points by sharing your content on Facebook, Twitter or LinkedIn. <br> Users can use points to view premium content anywhere on the internet.
-                                    </div>
-                                </div>
-                            </li>                           
-                            <li>
-                            	<div class="icon">
-                                	<img src="<?php echo plugins_url( '../images/content-icon.png', __FILE__ ) ?>" alt="img">
-                                </div>
-                                <div class="icon-text">
-                                	<div class="icon-heading">
-                                    	Define premium content items
-                                    </div>
-                                    <div class="icon-txt">
-                                    	Only Laudd offers you an easy way to define premium items on pages accessible to all. You can mark items such as interactive features, infographics, images, videos or even text as premium.
+                                    	Only the Laudd sharing toolbar offers your users points by sharing your content on Facebook, Twitter or LinkedIn. <br> Users can redeem points for real, valuable rewards from Laudd.
                                     </div>
                                 </div>
                             </li>                           
@@ -53,10 +40,23 @@
                                 </div>
                                 <div class="icon-text">
                                 	<div class="icon-heading">
-                                    	Increase traffic and reach
+                                    	Increase social traffic and reach
                                     </div>
                                     <div class="icon-txt">
-                                    	Because Laudd offers your user points for sharing, you instantly see dramatically increased website traffic from social networks. The higher social presence also means lots of new users!
+                                    	Watch your blog or website take off, as more users share your posts or pages to get more points. Users get one point for each unique visit they generate.
+                                    </div>
+                                </div>
+                            </li>                           
+                            <li>
+                            	<div class="icon">
+                                	<img src="<?php echo plugins_url( '../images/content-icon.png', __FILE__ ) ?>" alt="img">
+                                </div>
+                                <div class="icon-text">
+                                	<div class="icon-heading">
+                                    	Reward your users
+                                    </div>
+                                    <div class="icon-txt">
+                                    	Users can click from the Laudd toolbar to view and redeem their points for valuable rewards. Rewards are currently available only to U.S. residents.
                                     </div>
                                 </div>
                             </li>
