@@ -2,10 +2,10 @@
 /**
  * Plugin Name: laudd
  * Plugin URI: https://laudd.com/plugin
- * Description: Laudd is a digital media monetization solution that is introducing a free, unique and responsive toolbar that includes the ability to share content on social networks.
- * Version: laudd 1.0
+ * Description: Free plugin offers users points content shared through this toolbar generates traffic back to your blog or news website. Enables you to mark premium content that can be viewed using the earned points.
+ * Version: Laudd 4.3.5
  * Author: Laudd, Inc
- * Author URI: https://laudd.com/plugin
+ * Author URI: https://laudd.com
  * Tags: Laudd, laudd.com
  * License: GPL
 This program is free software: you can redistribute it and/or modify
@@ -43,7 +43,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			
 		// Add WP Ajax action for Site ID Check
 			add_action('wp_ajax_check_laudd_site_id_status', array($this, 'check_laudd_site_id_status'));
-		
+			
+		// Deactivate Laudd For Blank Site Id
+			add_action('admin_head', array($this, 'deactivate_laudd_for_blank_site_id'));
 		// Adding a setting link Under Plugin Name
 			$plugin = plugin_basename(__FILE__); 
 	
@@ -52,16 +54,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		   //Activating  Sessions
 			add_action('init', array($this, 'metrics_session'));		
 		   
-		   //Calling Function Add Custom Buttons to Editor
-				add_action( 'admin_print_footer_scripts', array($this,'appthemes_add_quicktags') );
-			
 			//Calling Function to Run Code in Single.PHP file
 				add_filter('the_content', array( $this,'laudd_add_to_content')) ;
 			
+				
+			/*
+		   //Calling Function Add Custom Buttons to Editor
+				add_action( 'admin_print_footer_scripts', array($this,'appthemes_add_quicktags') );
+
 			//Calling Function add tool bar option for single post 
 				add_action( 'add_meta_boxes', array($this, 'my_custom_field_checkboxes' ));
 				add_action( 'save_post', array($this,'my_custom_field_data' ));
-				
+			
 			//Calling Function to create Short Code for Laudd Toolbar	
 				add_shortcode( 'LauddToolbar', array($this, 'laudd_toolbar') );
 				add_shortcode('LauddObscure', array($this, 'laudd_obscure'));
@@ -70,7 +74,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			//Add Button on side of Media Button
 				add_action('media_buttons', array($this, 'add_mark_premium_Content_btn'), 20);
 				add_action('wp_enqueue_media', array($this, 'include_laudd_button_js_file'), 21);
-			
+			*/
+
 			//Code For Deactivation 
 				register_deactivation_hook( __FILE__, array($this, 'deactivate_plugin' ));
 				
@@ -91,6 +96,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	   function deactivate_plugin()
 	   { 
 			$this->processOption('laudd_siteid');
+			$this->processOption('laudd_activated');
 	   }
 	
    
@@ -148,7 +154,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	   }	   
 	   function srpt_plugin_redirect() 
 		{
-			if(strlen(get_option( 'srpt_activation_redirect' ) ) > 0 && !strlen( get_option('laudd_siteid') ) > 0 ){
+			if( strlen( get_option( 'srpt_activation_redirect' ) ) > 0 && strlen( get_option( 'laudd_activated' ) ) > 0 && !strlen( get_option('laudd_siteid') ) > 0 ){
 			
 					$srpt_url = admin_url( 'tools.php?page=Register-Laudd', 'http' );
 					if (get_option('srpt_activation_redirect', false))
@@ -218,35 +224,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		public function register_plugin_scripts()
 		{
 			
-			if(is_single() || is_admin()){
+			if(!is_home()){
 				$site_id = get_option('laudd_siteid');
 				echo "<script>(function(){
 								var ld = document.createElement('script');ld.type = 'text/javascript'; ld.async = true;
 								ld.src = 'https://laudd.com/userv/ReIgnite?s=".$site_id."';var s = document.getElementsByTagName('script')[0];
 								s.parentNode.insertBefore(ld, s);
 						})();</script>";
-				}
 			}
+		}
 		
   //--------------------------------------------------------------------------------------------------------------------------------------// 
 	//Code to Run Code in Single.PHP file
 		function laudd_add_to_content($content)
 		{	
-			global $post;
-			$post_id = $post->ID;
-			$tool_values = get_post_meta( $post_id, 'load_toolbar', true );
-			$updated_content="";
-			if( is_single() && ($tool_values == 1 || $tool_values == '')) 
-			{
-				$updated_content .= '<div class="laudd-toolbar" data-aspect="horizontal" data-button-color="white" data-spring-loaded="false" ></div>';
-				$updated_content .= '<div class="laudd-toolbar" data-aspect="vertical" data-button-color="white" data-spring-loaded="false" ></div>';
-			}
-			
-			$auto_mark_content_value = get_post_meta( $post_id, 'auto_mark_content', true ); 
-			if(is_single() && ($auto_mark_content_value == 1)){
-				  $auto_mark_content = '<div class="Laudd_show" style="visibility:hidden;">&nbsp;</div>';
-			}
-			
+			$updated_content .= '<div class="laudd-toolbar" data-aspect="horizontal"></div>';
+			$updated_content .= '<div class="laudd-toolbar" data-aspect="vertical"></div>';
 			return @$updated_content.$content.@$auto_mark_content;
 		}
 	 
@@ -385,31 +378,49 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
    //---------------------------------------------------------------------------------------------//	   
 	//Check if Site ID is correct or not
 	function check_laudd_site_id_status()
-	{
+	{	
 		$invalid_data = 'ew!';
+		$deactivation_flag = true;
 		if( isset( $_POST['site_id'] ) && $_POST['site_id']){
 			$siteID = $_POST['site_id'];
-			$input_data = 's='.$siteID.'&canURL=http://laudd.com';				
-			$url = "https://laudd.com/userv/ReIgnite?s=".$siteID."&canURL=http://laudd.com";
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 300);
-			$data = curl_exec($ch);
-			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
-			curl_close($ch); 
-			if( $data  == $invalid_data || $data  == '' ){
-				echo $invalid_data;
+			$url = "https://laudd.com/PublisherPortal/verifySiteId?s=".$siteID;
+			$json = @file_get_contents($url);
+			$data = json_decode($json);
+			if(is_object($data)){
+				if( $data->error == '' ){
+					update_option( 'laudd_siteid', $siteID, 'yes' );
+					$deactivation_flag = false;
+					echo 1;
+				} else {
+					$deactivation_flag = true;
+					echo $invalid_data;
+				}
 			} else {
-				update_option( 'laudd_siteid', $siteID, 'yes' );
-				echo 1;
-			}
+				$deactivation_flag = true;
+				echo $invalid_data;
+			}	
 		} else {
+			$deactivation_flag = true;
 			echo $invalid_data;
+		}
+		if( $deactivation_flag ){
+			deactivate_plugins( plugin_basename( __FILE__ ) );
 		}
 		die();
 	}
-	//---------------------------------------------------------------------------------------------//	   
+	//---------------------------------------------------------------------------------------------//
+	  //Check if Site ID is entered or not
+	  function deactivate_laudd_for_blank_site_id()
+	  {
+		 $screen = get_current_screen();
+		 $current_page_base = $screen->base;
+		 $res = array('tools_page_Register-Laudd', 'plugins');
+		 if( $current_page_base != '' ){
+			 if( !in_array($current_page_base, $res ) && !strlen(get_option('laudd_siteid')) > 0  ){
+				deactivate_plugins( plugin_basename( __FILE__ ) );
+			 }
+		 }
+	  }	   
 }
 $laudd = new Laudd();
 ?>
