@@ -66,6 +66,9 @@ Yes. While the current supported social networks cover the vast majority of the 
 3. Laudd vertical toolbar for a logged-in user
 
 == Changelog ==
+= 5.0.1 =
+* Fixed description to read better on WordPress plugin page.
+
 = 5.0 =
 * Removed premium content feature.
 
