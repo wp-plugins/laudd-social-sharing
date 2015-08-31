@@ -7,7 +7,7 @@ Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Increase your website's social reach and traffic. Users earn points for social visits they generate, and can redeem those points for real, valuable rewards.
+Increase your website's social reach and traffic. Users earn points for social visits they generate, and get rewards by redeeming points.
 
 == Description ==
 
