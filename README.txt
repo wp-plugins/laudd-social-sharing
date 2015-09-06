@@ -1,17 +1,17 @@
 === Laudd Social Share to Earn Points ===
 Contributors: laudd
-Tags: social network sharing, social sharing toolbar, premium content, free, mobile, responsive, facebook, twitter, linkedin, wordpress paywall
+Tags: social network sharing, social sharing toolbar, free, mobile, responsive, facebook, twitter, linkedin, social buttons
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 5.0.1
+Stable tag: 5.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Increase your website's social reach and traffic. Users earn points for social visits they generate, and get rewards by redeeming points.
+Increase your website's social reach and traffic. Users get points for social visits they generate, and can redeem points for rewards.
 
 == Description ==
 
-Free plugin offers users points when content shared through this toolbar generates traffic back to your blog or news website. Laudd offers users real, valuable rewards for those points. The Laudd Service offers a free trial and low-cost monthly plans. Rewards are currently available only to U.S. residents.
+Free plugin offers users points when pages or posts shared through this toolbar generates traffic back to your blog or news website. Laudd offers users real, valuable rewards for those points. Service is free up to 500 Laudd generated visits per month. Rewards are currently available only to U.S. residents.
 
 With this plugin you get to:
 
@@ -66,6 +66,9 @@ Yes. While the current supported social networks cover the vast majority of the 
 3. Laudd vertical toolbar for a logged-in user
 
 == Changelog ==
+= 5.0.2 =
+Clarified free tier language in README
+
 = 5.0.1 =
 * Fixed description to read better on WordPress plugin page.
 
