@@ -45,8 +45,7 @@
         <div class="container">
                   <div class="l_success message" style="margin-bottom:100px;">
 					 <h3>Activation Successful!</h3>
-					 <p>The Laudd WordPress plugin is now active. The Laudd toolbar will now appear on all posts, and if you haven’t unset automatic premium content setting in the Laudd Publisher Portal, the bottom 25% (approximately) of each post will be marked premium.</p>
-					<p>To manually mark premium content, select content in the visual editor (WYSIWYG editor), and click the "Mark Premium Content" button.</p>			
+					 <p>The Laudd WordPress plugin is now active. The Laudd toolbar will now appear on all pages except the home page.</p>			
 					<div class="btn-cont">
 						<a href="<?php echo admin_url( 'edit.php' ); ?>" class="thanks-btn">OK</a>
 					</div>

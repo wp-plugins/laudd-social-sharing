@@ -17,6 +17,7 @@
 	{
 		var site_id = jQuery('#laudd_site_id').val();	
 		var redirect_page = jQuery('#thanks-redirect-page').val();	
+		var redirect_cancel_url = jQuery('#redirect-cancel-url').val();
 		if (site_id == ''){
 			showError("Please enter the Site ID.");
 			jQuery('#laudd_site_id').focus();
@@ -35,6 +36,9 @@
 						window.location.href= redirect_page; 
 					} else {
 						showError("Please enter the correct Site ID.");
+						window.setTimeout(function () {
+							window.location.href= redirect_cancel_url; 
+						}, 5000);
 					}
 				}
 			});
