@@ -7,7 +7,7 @@ Stable tag: 5.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Increase your website's social reach and traffic. Users get points for social visits they generate, and can redeem points for rewards.
+Offer users gift-card rewards for social traffic they bring to your blog or website. Free plugin motivates users to share and earn points.
 
 == Description ==
 
