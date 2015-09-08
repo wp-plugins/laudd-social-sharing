@@ -11,7 +11,7 @@ Offer users gift-card rewards for social traffic they bring to your blog or webs
 
 == Description ==
 
-Free plugin offers users points when pages or posts shared through this toolbar generates traffic back to your blog or news website. Laudd offers users real, valuable rewards for those points. Service is free up to 500 Laudd generated visits per month. Rewards are currently available only to U.S. residents.
+Free plugin offers users points when pages or posts shared through this toolbar generates traffic back to your blog or news website. Laudd offers users real, valuable rewards for those points. Service is free up to first 500 Laudd generated visits. Rewards are currently available only to U.S. residents.
 
 With this plugin you get to:
 
